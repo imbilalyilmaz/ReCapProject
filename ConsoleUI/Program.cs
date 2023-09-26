@@ -51,7 +51,9 @@ internal class Program
 
     private static void ColorTest(ColorManager colorManager)
     {
-        foreach (var color in colorManager.GetAll())
+        var result = colorManager.GetAll().Data;
+        
+        foreach (var color in result)
         {
             Console.WriteLine(color.ColorName);
         }
@@ -59,7 +61,7 @@ internal class Program
 
     private static void BrandTest(BrandManager brandManager)
     {
-        foreach (var brand in brandManager.GetAll())
+        foreach (var brand in brandManager.GetAll().Data)
         {
             Console.WriteLine(brand.BrandName);
         }
@@ -67,7 +69,7 @@ internal class Program
 
     private static void CarTest(CarManager carManager)
     {
-        foreach (var car in carManager.GetCarDetails())
+        foreach (var car in carManager.GetCarDetails().Data)
         {
             Console.WriteLine("{0} / {1} / {2} / {3}",car.BrandName,car.CarName,car.ColorName,car.DailyPrice);
         }
